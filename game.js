@@ -24,7 +24,7 @@
     "    move(...)",
     "    if get_pos_x() == 0:",
     "        move(...)",
-    " #isi bagian (...) untuk menjalankan drone"
+    " #isi bagian (...) untuk menjalankan drone",
     ""
   ].join("\n");
   var CARROT_CODE = "# Beli Wortel di toko dulu\n" + BASIC_CODE.replace("Wheat", "Carrot");
