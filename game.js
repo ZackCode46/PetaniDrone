@@ -6,7 +6,7 @@
     carrot: { grow: 8, value: 6, dot: "#ee8a2e", leaf: "#4c9a3f", leafRipe: null }
   };
   var SHOP = [
-    { id: "water",   name: "Penyiram",    desc: "water(): tanaman tumbuh 2x lebih cepat",            cost: 30 },
+    { id: "water",   name: "Penyiram",  desc: "water(): tanaman tumbuh 2x lebih cepat",            cost: 30 },
     { id: "carrot",  name: "Wortel",      desc: "plant(Carrot): matang lebih lama, bernilai 6 koin", cost: 60 },
     { id: "field12", name: "Lahan 12x12", desc: "Petak lebih luas (lahan direset)",                  cost: 150, requires: "carrot", need: "Butuh Wortel dulu" }
   ];
@@ -20,10 +20,11 @@
     "while True:",
     "    if can_harvest():",
     "        harvest()",
-    "    plant(Wheat)",
-    "    move(East)",
+    "    plant(...)",
+    "    move(...)",
     "    if get_pos_x() == 0:",
-    "        move(North)",
+    "        move(...)",
+    " #isi bagian (...) untuk menjalankan drone"
     ""
   ].join("\n");
   var CARROT_CODE = "# Beli Wortel di toko dulu\n" + BASIC_CODE.replace("Wheat", "Carrot");
@@ -32,15 +33,15 @@
     "    while True:",
     "        if can_harvest():",
     "            harvest()",
-    "        plant(Wheat)",
-    "        move(East)",
+    "        plant(...)",
+    "        move(...)",
     "        if get_pos_x() == 0:",
-    "            move(North)",
+    "            move(...)",
     "",
     "if num_drones() < max_drones():",
     "    spawn_drone(work)",
     "    for i in range(4):",
-    "        move(North)",
+    "        move(...)",
     "work()",
     ""
   ].join("\n");
