@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Drone Farm</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<section class="screen" id="screen-tutorial">
+  <div class="card tut">
+    <div id="tut-body"></div>
+    <div class="bar">
+      <button id="tut-prev" class="chip">Kembali</button>
+      <div id="tut-dots"></div>
+      <button id="tut-next" class="go">Lanjut</button>
+    </div>
+  </div>
+</section>
+
+<section class="screen" id="screen-dashboard">
+  <div class="card dash">
+    <h1>Drone Farm</h1>
+    <p class="sub">Program drone-mu untuk bertani. Selesaikan quest tiap level.</p>
+    <div id="dash-stats" class="bar"></div>
+    <button id="btn-play" class="go big">Play</button>
+    <div class="bar">
+      <button id="btn-tutorial-again" class="chip">Lihat Tutorial</button>
+      <button id="btn-reset-all" class="chip">Reset Progres</button>
+    </div>
+  </div>
+</section>
+
+<section class="screen" id="screen-levels">
+  <div class="card levels">
+    <header class="row"><button id="btn-to-dash" class="chip">&larr; Dashboard</button><h2>Pilih Level</h2></header>
+    <div id="level-grid"></div>
+  </div>
+</section>
+
+<section class="screen" id="screen-game">
+  <div id="quest-banner">
+    <button id="btn-to-levels" class="chip">&larr; Level</button>
+    <div class="qtext"><b id="quest-name">Level</b><span id="quest-desc">Quest</span></div>
+    <span id="quest-progress"></span>
+  </div>
+  <main>
+    <section class="win" aria-label="Editor kode">
+      <header>
+        <button id="run" class="wb go" aria-label="Run">&#9654;</button>
+        <button id="stop" class="wb" aria-label="Stop">&#9632;</button>
+        <span>main.py</span>
+      </header>
+      <textarea id="src" spellcheck="false" aria-label="Kode drone"></textarea>
+      <div id="now" aria-live="off"></div>
+      <div id="log" aria-live="polite"></div>
+      <details>
+        <summary>Daftar perintah</summary>
+<pre>move(North | South | East | West)
+plant(Wheat | Carrot)
+harvest()        panen + dapat koin
+can_harvest()    True jika tanaman matang
+water()          (perlu unlock)
+get_pos_x()      get_pos_y()
+get_world_size() get_coins()
+num_items(Wheat)
+spawn_drone(nama_fungsi)   (perlu beli drone)
+num_drones()     max_drones()
+print(...)
+
+Python: if/elif/else, while, for i in range(n),
+def, return, break, continue, and/or/not.
+Huruf besar-kecil penting: West, bukan west.
+Peta menyambung di tepi. Tiap aksi = 1 tick.</pre>
+      </details>
+    </section>
+
+    <section class="farm">
+      <canvas id="cv" width="560" height="400"></canvas>
+      <div id="hud">
+        <span>Koin <b id="coins">0</b></span>
+        <span>Gandum <b id="inv-wheat">0</b></span>
+        <span>Wortel <b id="inv-carrot">0</b></span>
+        <span>Tick <b id="ticks">0</b></span>
+        <span>Drone <b id="drones">1/1</b></span>
+      </div>
+      <div class="bar">
+        <label>Kecepatan <input id="spd" type="range" min="1" max="8" value="4" aria-label="Kecepatan drone"></label>
+        <button id="reset-field" class="chip">Reset lahan</button>
+      </div>
+      <div id="unlocks"></div>
+    </section>
+  </main>
+</section>
+
+<div id="overlay" class="hidden">
+  <div class="card win2">
+    <h2 id="win-title">Level selesai!</h2>
+    <p id="win-text"></p>
+    <div class="bar">
+      <button id="win-levels" class="chip">Daftar Level</button>
+      <button id="win-next" class="go">Level Berikutnya</button>
+    </div>
+  </div>
+</div>
+
+<script src="interp.js"></script>
+<script src="game.js"></script>
+</body>
+</html>
