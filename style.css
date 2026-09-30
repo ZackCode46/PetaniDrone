@@ -85,3 +85,12 @@ button.big { display: block; width: 100%; padding: 16px; font-size: 20px; font-w
 #overlay { position: fixed; inset: 0; background: rgba(0,0,0,.55); display: flex; align-items: center; justify-content: center; z-index: 20; }
 #overlay.hidden { display: none; }
 .win2 { max-width: 380px; text-align: center; }
+
+/* dashboard achievements */
+.dash { text-align: left; }
+.dash h1, .dash .sub, .dash .bar, .dash button.big { text-align: center; }
+.dash h2 { margin: 18px 0 4px; font-size: 15px; color: #d8e2e6; }
+#achievements { max-height: 220px; overflow-y: auto; }
+#achievements .badge { font-size: 12px; padding: 3px 10px; border-radius: 999px; background: rgba(255,255,255,.12); white-space: nowrap; }
+#achievements .badge.on { background: #5f8f1c; color: #fff; }
+.lvl .badge { letter-spacing: 1px; }
