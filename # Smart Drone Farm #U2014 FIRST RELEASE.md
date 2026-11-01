@@ -1,4 +1,4 @@
-# UPDATE 30 SEPTEMBER 2026! Smart Drone Farm — v2.1.0
+# UPDATE 01 NOVEMBER 2026! Smart Drone Farm — v2.1.0
 
 **Smart Drone Farm** is a farming automation game inspired by the concept of *The Farmer Was Replaced*. In this game, players write code to control drones that plant, water, grow, and harvest crops while managing resources, completing quests, and expanding their farm.
 
